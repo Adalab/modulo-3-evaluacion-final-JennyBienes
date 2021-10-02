@@ -1,0 +1,2 @@
+(this["webpackJsonpmodulo-3-evaluacion-final-jennybienes"]=this["webpackJsonpmodulo-3-evaluacion-final-jennybienes"]||[]).push([[0],{10:function(e,n,t){"use strict";t.r(n);var a=t(0),c=t.n(a),i=t(3),o=t.n(i),s=(t(8),t(1));var r=function(){return Object(s.jsx)("div",{className:"page"})};o.a.render(Object(s.jsx)(c.a.StrictMode,{children:Object(s.jsx)(r,{})}),document.getElementById("root"))},8:function(e,n,t){}},[[10,1,2]]]);
+//# sourceMappingURL=main.3cfbddb5.chunk.js.map
