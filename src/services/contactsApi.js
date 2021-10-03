@@ -12,7 +12,7 @@ const GetApiData = (filterSpecie, filterName) => {
                     species: character.species,
                     image: character.image,
                     origin: character.origin.name,
-                    episodes: character.episode.length, //longitud del array
+                    episodes: character.episode.length,
                     
                 };
             });
