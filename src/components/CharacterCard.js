@@ -1,21 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import '../stylesheets/layout/characterCard.scss';
 
-const CharacterCard = (props) => {
+function CharacterCard (props) {
+  console.log('CharacterCard', props);
   return (
-    <li>
-      <Link to={`/character/${props.character.id}`}>
-        <img
-          className="image"
-          src={props.character.image}
-          alt={`Foto de ${props.character.name}`}
-        />
-      </Link>
-      <section className="info-character">
-        <h3 className="name">{props.character.name}</h3>
-        <p className="species">{props.character.species}</p>
-      </section>
-    </li>
+    <>
+    <img src={props.character.image} alt="img" className="img__class" />
+    <p className="text__card__class">{props.character.name}</p>
+    <p className="text__card__class">{props.character.species}</p>
+    </>
   );
 };
 export default CharacterCard;
