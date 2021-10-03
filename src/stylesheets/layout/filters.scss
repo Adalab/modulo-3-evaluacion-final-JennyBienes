@@ -1,0 +1,32 @@
+.input__search {
+    height: 30px;
+    width: 350px;
+    background-color: darkgray;
+    border: solid 2px;
+    border-color: steelblue;
+    margin-bottom: 50px;
+  }
+  
+  .select__input {
+    height: 30px;
+    width: 85px;
+    background-color: darkgray;
+    border: solid 2px;
+    border-color: steelblue;
+  }
+  .select__filter {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: steelblue;
+    text-align: center;
+    align-items: center;
+  }
+.filters {
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}  

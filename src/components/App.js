@@ -1,39 +1,61 @@
 //import { Route, Switch } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import getApiData from '../services/ContactsApi';
+import GetApiData from '../services/ContactsApi';
 //import CharacterDetail from './CharacterDetail';
-//import CharacterList from './CharacterList';
-//import Filters from './Filters';
-//import Header from './Header.js';
+import CharacterList from './CharacterList';
 import '../stylesheets/App.scss';
-import logo from '../Images/Rick_and_Morty_-_logo_(English).png';
+import Filters from './Filters';
+import Header from './Header';
 
-//function App() {
 
-  const App = () => {
-    
-    const [characters, setCharacters] = useState([]);
-    const [input, setInput] = useState("");
-    useEffect(() => {
-      getApiData().then((data) => {
-        setCharacters(data);
-      });
-    }, []);
+const App = () => {
+  const [characters, setCharacters] = useState([]);
+  const [filterName, setFilterName] = useState('');
+  const [filterSpecie, setFilterSpecie] = useState('Human');
 
+
+  useEffect(() => {
+    GetApiData(filterSpecie).then((data) => setCharacters(data));
+  }, [filterSpecie]);
+  console.log('se ejecuta despues de UseEffect Character queda como sigue');
+  console.log(characters);
+
+  const handleFilterNameChild = (ev) => {
+    setFilterSpecie(ev.target.value);
+  };
+
+  const renderCharacters = () => {
+    return characters.map((character) => {
+      return (
+        <li>
+          <img src={character.image} alt="img" className="img" />
+          <p>{character.name}</p>
+          <p>{character.species}</p>
+        </li>
+      );
+    });
+  };
   return (
-    <div className="background">
-    <header className="header">
-      <img
-      className="header__image"
-      src={logo}
-      alt="Logo Rick and Morty"
-      title="Logo Rick and Morty"
-    />
-  </header>
-  <main>
-  </main>
-      
-  </div>
+    <form className="form__search">
+      <Header />
+      <Filters />
+      <div className="select__filter">
+        <label htmlFor="filterSpecie">Selecciona la especie </label>
+        <select
+          className="select__input"
+          name="filterSpecie"
+          id="filterSpecie"
+          value="filterSpecie"
+          onChange={handleFilterNameChild}
+        >
+          <option value="Human">Humano</option>
+          <option value="Alien">Alien</option>
+        </select>
+      </div>
+      <h2>Personajes</h2>
+      <ul>{renderCharacters()}</ul>
+      <CharacterList />
+    </form>
   );
 };
 

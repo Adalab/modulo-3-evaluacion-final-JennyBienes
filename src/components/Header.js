@@ -1,13 +1,14 @@
 import logo from '../Images/Rick_and_Morty_-_logo_(English).png'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import '../stylesheets/layout/header.scss';
 
 function Header() {
-    return (
-      <header className="header">
+  return (
+    <header className="header">
         <Link to="/">
-          <img className="header__image" src={logo} alt="logo rick and morty" />
-        </Link>
-      </header>
-    );
-  }
-  export default Header;
+        <img className="header__image" src={logo} alt="logo rick and morty" />
+      </Link>
+    </header>
+  );
+}
+export default Header;
