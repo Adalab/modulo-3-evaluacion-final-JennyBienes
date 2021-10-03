@@ -2,7 +2,7 @@ import '../stylesheets/layout/filters.scss';
 
 
 const Filters = (props) => {
-    const handleFilterNameChild = (ev) => {
+    const handleFilterSpecie = (ev) => {
         ev.preventDefault();
         props.handleFilters({
             key: ev.target.id,
@@ -22,11 +22,23 @@ const Filters = (props) => {
                     className="input__search"
                     type="text"
                     placeholder="Escribe el nombre de un personaje"
-                id="filterName"
-                value={props.filterName }
-                onChange={handleFilterNameChild}
+                    id="filterName"
+                    value={props.filterName}
+                    onChange={props.handleFilterSpecie}
                 />
-                
+                <div className="select__filter">
+                    <label htmlFor="filterSpecie">Selecciona la especie </label>
+                    <select
+                        className="select__input"
+                        name="filterSpecie"
+                        id="filterSpecie"
+                        value={props.filterSpecie}
+                        onChange={props.handleFilterSpecie}
+                    >
+                        <option value="Human">Humano</option>
+                        <option value="Alien">Alien</option>
+                    </select>
+                </div>
             </form >
         </div>
     );

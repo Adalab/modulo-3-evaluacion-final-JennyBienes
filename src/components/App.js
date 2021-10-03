@@ -20,41 +20,23 @@ const App = () => {
   console.log('se ejecuta despues de UseEffect Character queda como sigue');
   console.log(characters);
 
-  const handleFilterNameChild = (ev) => {
+  const handleFilterSpecie = (ev) => {
     setFilterSpecie(ev.target.value);
   };
 
-  const renderCharacters = () => {
-    return characters.map((character) => {
-      return (
-        <li>
-          <img src={character.image} alt="img" className="img" />
-          <p>{character.name}</p>
-          <p>{character.species}</p>
-        </li>
-      );
-    });
-  };
+  
   return (
     <form className="form__search">
       <Header />
-      <Filters />
-      <div className="select__filter">
-        <label htmlFor="filterSpecie">Selecciona la especie </label>
-        <select
-          className="select__input"
-          name="filterSpecie"
-          id="filterSpecie"
-          value="filterSpecie"
-          onChange={handleFilterNameChild}
-        >
-          <option value="Human">Humano</option>
-          <option value="Alien">Alien</option>
-        </select>
-      </div>
-      <h2>Personajes</h2>
-      <ul>{renderCharacters()}</ul>
-      <CharacterList />
+      <section>
+      <Filters
+        filterSpecie={filterSpecie}
+        handleFilterSpecie={handleFilterSpecie}
+      />
+      </section>
+      <section>
+      <CharacterList characters= {characters} />
+      </section>
     </form>
   );
 };
