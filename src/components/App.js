@@ -11,19 +11,24 @@ import Header from './Header';
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState('');
-  const [filterSpecie, setFilterSpecie] = useState('Human');
+  const [filterSpecie, setFilterSpecie] = useState('');
 
 
   useEffect(() => {
-    GetApiData(filterSpecie).then((data) => setCharacters(data));
-  }, [filterSpecie]);
-  console.log('se ejecuta despues de UseEffect Character queda como sigue');
-  console.log(characters);
-
+    GetApiData(filterSpecie, filterName).then((data) => setCharacters(data));
+     }, [filterSpecie, filterName]);
+  
+  //   console.log(characters.lenght);
+  //debugger;
+  
   const handleFilterSpecie = (ev) => {
     setFilterSpecie(ev.target.value);
   };
-
+  const handleFilterName = (ev) => {
+    console.log('El criterio de búsqueda por nombre es ', ev.currentTarget.value);
+    setFilterName ( ev.currentTarget.value );
+    console.log( 'Y filtername es',filterName );
+  }
   
   return (
     <form className="form__search">
@@ -32,6 +37,8 @@ const App = () => {
       <Filters
         filterSpecie={filterSpecie}
         handleFilterSpecie={handleFilterSpecie}
+        filterName={filterName}
+        handleFilterName={handleFilterName}
       />
       </section>
       <section>

@@ -2,13 +2,21 @@ import '../stylesheets/layout/filters.scss';
 
 
 const Filters = (props) => {
-    const handleFilterSpecie = (ev) => {
-        ev.preventDefault();
-        props.handleFilters({
-            key: ev.target.id,
-            value: ev.target.value,
-        });
-    };
+    //const handleFilterSpecie = (ev) => {
+    //    ev.preventDefault();
+    //    props.handleFilters({
+    //        key: ev.target.id,
+    //        value: ev.target.value,
+    //    });
+    //};
+    //const handleFilterName = (ev) => {
+     //   ev.preventDefault();
+    //    props.handleFilters({
+    //        key: ev.target.id,
+    //        value: ev.target.value,
+    //        });
+    //    };
+    
     const handleSubmit = (ev) => {
         if (ev.key === 'Enter') {
             ev.preventDefault();
@@ -24,7 +32,7 @@ const Filters = (props) => {
                     placeholder="Escribe el nombre de un personaje"
                     id="filterName"
                     value={props.filterName}
-                    onChange={props.handleFilterSpecie}
+                    onChange={props.handleFilterName}
                 />
                 <div className="select__filter">
                     <label htmlFor="filterSpecie">Selecciona la especie </label>

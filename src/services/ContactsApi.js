@@ -1,6 +1,6 @@
-const GetApiData = (filterSpecie) => {
+const GetApiData = (filterSpecie, filterName) => {
     return fetch(
-        `https://rickandmortyapi.com/api/character/?species=${filterSpecie}`
+        `https://rickandmortyapi.com/api/character/?name=${filterName}&species=${filterSpecie}`
     )
         .then((response) => response.json())
         .then((data) => {
@@ -16,8 +16,8 @@ const GetApiData = (filterSpecie) => {
                     
                 };
             });
-            console.log('La data extraida es');
-            console.log(ApiData);
+            console.log('La data extraida para la búsqueda por ', filterName, filterSpecie,'es:');
+           // console.log(ApiData);
             
             return ApiData;
         });

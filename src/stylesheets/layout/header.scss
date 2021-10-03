@@ -7,13 +7,9 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  .header__logo {
-    width: 60%;
-    max-height: 250px;
-  }
-  .header__img {
-    width: 30%;
-    max-height: 250px;
-    max-width: 250px;
-  }
+}
+.header__img {
+  width: 30%;
+  max-height: 250px;
+  max-width: 250px;
 }
