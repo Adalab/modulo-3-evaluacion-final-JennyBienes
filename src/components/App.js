@@ -16,13 +16,9 @@ const App = () => {
 
 
   useEffect(() => {
-    if (ls.get('constacts', []).length > 0) {
-      setCharacters(ls.get('contacts', []));
-    }
-    else {
       GetApiData(filterSpecie, filterName).then((data) => setCharacters(data));
-    } [filterSpecie, filterName];
-    //ls.set('contacts', data );
+    } [filterSpecie, filterName],
+
 });
 
   const handleFilterSpecie = (ev) => {
