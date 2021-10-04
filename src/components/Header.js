@@ -5,7 +5,7 @@ import '../stylesheets/layout/header.scss';
 function Header() {
   return (
     <header className="header">
-        <Link to="/">
+      <Link to="/">
         <img className="header__image" src={logo} alt="logo rick and morty" />
       </Link>
     </header>

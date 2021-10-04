@@ -1,0 +1,35 @@
+.card__img {
+  height: 300px;
+  width: 300px;
+  margin-right: auto;
+  padding: 20px;
+}
+.text__detail__class {
+  text-align: left;
+  margin: auto;
+  padding: 0px;
+  color: ghostwhite;
+  text-decoration: none;
+  list-style: none;
+  justify-content: center;
+  line-height: 25px;
+  align-items: center;
+}
+.character__detail {
+  width: 600px;
+  background-color: steelblue;
+  color: white;
+  padding: rem(5);
+  font-size: 15px;
+  border: solid 2px white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  flex-direction: row;
+}
+.title_detail{
+font-size: 20px;
+text-emphasis-style:inherit;
+text-decoration-style: solid;
+}

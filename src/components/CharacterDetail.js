@@ -1,29 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../stylesheets/layout/characterDetail.scss';
+import ModalWindow from './ModalWindow';
+import Morty from '../Images/morty-sad.png';
+
 
 const CharacterDetail = (props) => {
+  if (props.user === undefined) {
     return (
-        <div className="card__detail-container">
-          <section className="card__container">
-            <img src={props.image} alt={props.name} />
-            <div className="card__text">
-              <div className="card__title">
-                <h2>{props.name}</h2>
-              </div>
-              <ul>
-                <li>{`Estado: ${props.user.status}`}</li>
-                <li>{`Especie: ${props.user.species}`}</li>
-                <li>{`Planeta de origen: ${props.user.origin}`}</li>
-                <li>{`Nº de episodios: ${props.user.episodes}`}</li>
-              </ul>
-            </div>
-          </section>
-          <Link className="btn__return" to="/">
-            <i className="fas fa-angle-left"></i> Volver
-          </Link>
+      <ModalWindow title='Personaje no encontrado'>
+        <p>Intentalo de nuevo con otra búsqueda</p>
+      </ModalWindow>
+    );
+  } else {
+    return (
+      <ModalWindow title={props.user.name}>
+        <div className="character__detail">
+        <img
+          className='card__img'
+          src={props.user.image}
+          alt={props.user.name}
+        />
+        <ul className="text__detail__class">
+          <li className="title_detail">{props.user.name}</li>
+          <li>Status: {props.user.status}</li>
+          <li>Specie: {props.user.species}</li>
+          <li>Origin: {props.user.origin}</li>
+          <li>Episodes: {props.user.episodes}</li>
+        </ul>
         </div>
-      );
-    };
+      </ModalWindow>
+    );
+  }
+}
 
 export default CharacterDetail;

@@ -4,7 +4,9 @@ const GetApiData = (filterSpecie, filterName) => {
     )
         .then((response) => response.json())
         .then((data) => {
-            const ApiData = data.results.map((character)=>{
+            console.log('La cantidad de elementos que encuentra es ',data.info.count);
+
+            const ApiData = data.results.map((character) => {
                 return {
                     id: character.id,
                     name: character.name,
@@ -13,12 +15,12 @@ const GetApiData = (filterSpecie, filterName) => {
                     image: character.image,
                     origin: character.origin.name,
                     episodes: character.episode.length,
-                    
+
                 };
             });
-            console.log('La data extraida para la búsqueda por ', filterName, filterSpecie,'es:');
-           // console.log(ApiData);
+            console.log('La data extraida para la búsqueda por ', filterName, filterSpecie, 'es:');
             
+
             return ApiData;
         });
 };

@@ -1,7 +1,7 @@
-import { Route, Switch } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import { Route, Switch, useRouteMatch, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import GetApiData from '../services/contactsApi';
-import ls from '../services/ls';
+import ModalWindow from './ModalWindow';
 import CharacterDetail from './CharacterDetail';
 import CharacterList from './CharacterList';
 import '../stylesheets/App.scss';
@@ -16,10 +16,15 @@ const App = () => {
 
 
   useEffect(() => {
-      GetApiData(filterSpecie, filterName).then((data) => setCharacters(data));
-    } [filterSpecie, filterName],
+    GetApiData(filterSpecie, filterName).then((data) => setCharacters(data));
+  }, [filterSpecie, filterName]);
 
-});
+  const routeData = useRouteMatch('/user/:id');
+  const characterId = (routeData !== null) ? routeData.params.id : '';
+
+  const selectedContact = characters.find((character) => character.id === parseInt(characterId))
+
+  console.log('El contacto seleccionado para card es', selectedContact);
 
   const handleFilterSpecie = (ev) => {
     setFilterSpecie(ev.target.value);
@@ -36,7 +41,9 @@ const App = () => {
       <Switch>
         <Route path='/user/:id'>
           <section>
-            <CharacterDetail />
+            <CharacterDetail
+              user={selectedContact}
+            />
           </section>
         </Route>
         <Route exact path='/'>

@@ -2,21 +2,7 @@ import '../stylesheets/layout/filters.scss';
 
 
 const Filters = (props) => {
-    //const handleFilterSpecie = (ev) => {
-    //    ev.preventDefault();
-    //    props.handleFilters({
-    //        key: ev.target.id,
-    //        value: ev.target.value,
-    //    });
-    //};
-    //const handleFilterName = (ev) => {
-     //   ev.preventDefault();
-    //    props.handleFilters({
-    //        key: ev.target.id,
-    //        value: ev.target.value,
-    //        });
-    //    };
-    
+
     const handleSubmit = (ev) => {
         if (ev.key === 'Enter') {
             ev.preventDefault();
@@ -43,8 +29,11 @@ const Filters = (props) => {
                         value={props.filterSpecie}
                         onChange={props.handleFilterSpecie}
                     >
+                        <option value="">Todos</option>
                         <option value="Human">Humano</option>
                         <option value="Alien">Alien</option>
+                        <option value="Animal">Animal</option>
+                        <option value="Humanoid">Humanoide</option>
                     </select>
                 </div>
             </form >
