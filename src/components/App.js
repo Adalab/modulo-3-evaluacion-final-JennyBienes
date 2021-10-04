@@ -1,13 +1,12 @@
-import { Route, Switch, useRouteMatch, Link } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import GetApiData from '../services/contactsApi';
-import ModalWindow from './ModalWindow';
 import CharacterDetail from './CharacterDetail';
 import CharacterList from './CharacterList';
 import '../stylesheets/App.scss';
 import Filters from './Filters';
 import Header from './Header';
-
+import CharacterNotFound from './CharacterNotFound';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -56,12 +55,10 @@ const App = () => {
             />
           </section>
           <section>
-            <CharacterList characters={characters} />
-          </section>
-        </Route>
-        <Route>
-          <section>
-            Oh! Página equivocada.
+            {characters.length === 0 ?
+              <CharacterNotFound /> :
+              <CharacterList characters={characters} />
+            };
           </section>
         </Route>
       </Switch>

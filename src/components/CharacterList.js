@@ -9,7 +9,6 @@ function CharacterList(props) {
   ));
   return (
     <div>
-      <h2>Personajes</h2>
       <ul className="list__class">{renderCharacters}</ul>
     </div>
   );

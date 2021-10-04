@@ -1,7 +1,6 @@
 import React from 'react';
 import '../stylesheets/layout/characterDetail.scss';
 import ModalWindow from './ModalWindow';
-import Morty from '../Images/morty-sad.png';
 
 
 const CharacterDetail = (props) => {

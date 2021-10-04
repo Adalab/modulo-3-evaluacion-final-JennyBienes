@@ -2,7 +2,7 @@ import '../stylesheets/layout/characterCard.scss';
 import { Link } from 'react-router-dom';
 
 function CharacterCard(props) {
- console.log('En CharacterCard entra con ', props.character.id);
+// console.log('En CharacterCard entra con ', props.character.id);
   return (
     <Link to={`./user/${props.character.id}`}>
       <img
