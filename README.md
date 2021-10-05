@@ -1,8 +1,8 @@
-### Buscador de personajes de Rick and Morty
+## Buscador de personajes de Rick and Morty 
 
 El proyecto ha consistido en desarrollar una aplicación web con un listado de personajes de Rick and Morty en el que el usuario puede filtrar por nombre del personaje y especie. Al hacer la búsqueda pueden suceder 2 eventos, una de ellos es que el personaje exista y a continuación se muestre más información en la tarjeta o por el contrario que el personaje no exista y aparezca un mensaje que debe realizar otra búsqueda.
 
-### Tecnologías utilizadas
+### Tecnologías utilizadas 🔭
 
 Este proyecto ha sido llevado a cabo utilizando React, JavaScript, HTML, Sass, Node JS. He trabajado con el React Starter Kit dividiendo el JavaScript en varios componentes hijos e importándolos luego cada uno en el componente principal App.js. En el caso de Sass he hecho algo similar, he añadido varios ficheros uno por cada componente. He añadido 7 componentes hijos a los cuales brevemente me referiré a continuación:
 
@@ -20,18 +20,18 @@ Este proyecto ha sido llevado a cabo utilizando React, JavaScript, HTML, Sass, N
 
 7.- El componente ModalWindows es el que se encarga de mostrar la información detallada de cada personaje cuando el usuario clickea en uno de ellos.
 
-### Bonus
+### Bonus 🌱
 
 Como tareas adicionales he agregado el fitro para hacer la búsqueda por especie y he añadido una imagen con un texto para que el mismo se muestre cuando no haya ninǵun resultado que coincida con la búsqueda.
 
-### Traducción de la información
+### Traducción de la información 📝
 
 Se pedía en el ejercicio implementar una nueva funcionalidad: al hacer click sobre la tarjeta de un personaje, su informacion debe aparecer a pantalla completa; para esto debemos utilizar rutas y React Router DOM. En la pantalla de detalle debe aparecer la foto, nombre y especie, el planeta de origen, el número de episodios en los que aparece y si está vivo o muerto; ésta información aparece en inglés por lo que la he traducido al español.
 
-### Reto superado
+### Reto superado 👨‍💻
 
 Trabajar con React para mi ha representado un gran reto que con propiedad puedo decir que lo he superado, me queda aún mucho por aprender pero me siento muy orgullosa de lo que he podido hacer en este proyecto, me he retado como nunca a mi misma, he trabajado muchas horas frente al ordenador pero siento que ha dado sus frutos: este hermoso trabajo!!
 
-### Cómo arrancar el proyecto
+### Cómo arrancar el proyecto 📄
 
 Nos clonamos el repositorio y ejecutamos en la terminal npm install para cargar las dependencias que necesitamos para trabajar con el proyecto y hacemos npm start para arrancar el servidor.
