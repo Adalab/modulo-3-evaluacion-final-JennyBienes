@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+### Buscador de personajes de Rick and Morty
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El proyecto ha consistido en desarrollar una aplicación web con un listado de personajes de Rick and Morty en el que el usuario puede filtrar por nombre del personaje y especie. Al hacer la búsqueda pueden suceder 2 eventos, una de ellos es que el personaje exista y a continuación se muestre más información en la tarjeta o por el contrario que el personaje no exista y aparezca un mensaje que debe realizar otra búsqueda.
 
-## Available Scripts
+### Tecnologías utilizadas
 
-In the project directory, you can run:
+Este proyecto ha sido llevado a cabo utilizando React, JavaScript, HTML, Sass, Node JS. He trabajado con el React Starter Kit dividiendo el JavaScript en varios componentes hijos e importándolos luego cada uno en el componente principal App.js. En el caso de Sass he hecho algo similar, he añadido varios ficheros uno por cada componente. He añadido 7 componentes hijos a los cuales brevemente me referiré a continuación:
 
-### `npm start`
+1.- El componente CharacterCard es el que se encarga de pintar la información de cada personaje que luego será importada a CharacterList y a través de este componente se devolverá un listado con cada una de las cartas de los personajes, cuya información recibimos de la llamada a la Api.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2.- El componente CharacterDetail es el que se encargará de recoger una información más detallada sobre cada personaje y aparecerá en pantalla cuando el usuario haga click sobre uno de ellos.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+3.- El componente CharacterList es el que se encarga de pintar el listado de todos los personajes en el navegador, en este caso cuando se ha hacho la llamada a la API, la misma ha devuelto 20 resultados pero es importante hacer énfasis que cuando se hace la búsqueda filtrando bien sea por nombre de personaje o por especie trae todos los resultados que coincidan con ese parámetro en la API no sólo los 20.
 
-### `npm test`
+4.- El componente CharacterNotFound es el que se encarga de devolver el mensaje de personaje inexistente.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5.- El componente Filters es el que se encarga de llevar a cabo las funciones de filtrar la búsqueda hecha por el usuario. Lo que se pedía en el ejercicio era hacer un filtrado de personajes por nombre el cual se llevaría a cabo añadiendo un input de forma que al ir escribiendo un nombre queden en la interfaz sólo los personajes cuyo nombre completo contiene esas letras. Además ha sido añadido otro filtro para hacer la búsqueda por especie.
 
-### `npm run build`
+6.- El componente Header es el que se encarga de mostrar el logo y el formulario contentivo de los 2 input, el input tipo text para filtrar por nombre de personaje y el input tipo select para filtrar por especie.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+7.- El componente ModalWindows es el que se encarga de mostrar la información detallada de cada personaje cuando el usuario clickea en uno de ellos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Bonus
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Como tareas adicionales he agregado el fitro para hacer la búsqueda por especie y he añadido una imagen con un texto para que el mismo se muestre cuando no haya ninǵun resultado que coincida con la búsqueda.
 
-### `npm run eject`
+### Traducción de la información
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Se pedía en el ejercicio implementar una nueva funcionalidad: al hacer click sobre la tarjeta de un personaje, su informacion debe aparecer a pantalla completa; para esto debemos utilizar rutas y React Router DOM. En la pantalla de detalle debe aparecer la foto, nombre y especie, el planeta de origen, el número de episodios en los que aparece y si está vivo o muerto; ésta información aparece en inglés por lo que la he traducido al español.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Reto superado
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Trabajar con React para mi ha representado un gran reto que con propiedad puedo decir que lo he superado, me queda aún mucho por aprender pero me siento muy orgullosa de lo que he podido hacer en este proyecto, me he retado como nunca a mi misma, he trabajado muchas horas frente al ordenador pero siento que ha dado sus frutos: este hermoso trabajo!!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Cómo arrancar el proyecto
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Nos clonamos el repositorio y ejecutamos en la terminal npm install para cargar las dependencias que necesitamos para trabajar con el proyecto y hacemos npm start para arrancar el servidor.
