@@ -12,6 +12,7 @@ function CharacterCard(props) {
       />
       <p className="text__card__class">{props.character.name}</p>
       <p className="text__card__class">{props.character.species}</p>
+      <p className="text__card__class">{props.character.status}</p>
     </Link>
   );
 };
